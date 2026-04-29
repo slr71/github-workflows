@@ -34,7 +34,7 @@ jobs:
 
       - name: Harbor Login
         id: harbor_login
-        uses: docker/login-action@v3
+        uses: docker/login-action@v4
         with:
           registry: harbor.cyverse.org
           username: ${{ secrets.harbor-username }}
@@ -42,7 +42,7 @@ jobs:
 
       - name: Install Kubernetes Tools
         id: install_k8s_tools
-        uses: yokawasa/action-setup-kube-tools@v0.13.1
+        uses: yokawasa/action-setup-kube-tools@v0.13.5
 
       - name: Build Docker images
         id: build
